@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+	<head>
+		<title> Options | Chrome Lock v1.0</title>
+		<script src="options.js"></script>
+		<style>
+			body{  
+				background: url(Images/background.jpg) no-repeat center center fixed; 
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.content{
+				background-color: white;
+				border-radius: 25px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 1200px;
+				height: 560px;
+				margin: 50px;
+			}
+			
+			p{
+				font-size: 14px;
+				margin-left: 20px;
+			}
+			
+			.main{
+				border-radius: 25px;
+				border-width: 5px;
+				border-style: groove;
+				border-color: lightgrey;
+				overflow-y: scroll;
+				height: 450px;
+			}
+			
+			bt1{
+				margin-left: 35px;
+			}
+			
+			hr{
+				height: 3px;
+				color: lightgrey;
+				background-color: lightgrey;
+			}
+			
+			input{
+				font-size: 14px;
+				margin-left: 20px;
+				margin-bottom: 15px;
+			}
+			h1{
+				margin-left: 20px;
+			}
+			
+			h2{
+				margin-left: 20px;
+			}
+			
+			.inRed{
+				color: red;
+			}
+			.footer{
+				background-color: #FFFFFF;
+				border-radius: 25px;
+				height: 50px;
+				width: 100%;
+				border-color: black;
+				border-style: solid;
+				border-width: 3px;
+			}
+			#button{
+				font-weight: 900;
+				margin-top: 10px;
+				font-size: 18px;
+				color: #FFFFFF;
+				border-radius: 5px;
+				height: 30px;
+				line-height: 30px;
+				background-color: #5590FF;
+				border-color: #4672B9;
+			}
+			
+			#button:hover{
+				cursor: default;
+				background-color: #3C7BED;
+				border-color: #365DAA;
+			}
+			
+			#buttonLayout1{
+				width: 50%;
+				float: left;
+			}
+			
+			#buttonLayout2{
+				width: 50%;
+				float: right;
+			}
+
+			.ftbt1{
+				margin-right: 25px;
+				width: 150px;
+				float: right;
+			}
+			.ftbt2{
+				margin-left: 25px;
+				width: 130px;
+				float: left;
+			}
+			
+			select{
+				margin-left: 25px;
+				width: 400px;
+				font-size: 14px;
+			}
+			
+			.add{
+				margin-left: 20px;
+				height: 25px;
+			}
+			
+			.remove{
+				margin-left: 20px;
+				height: 25px;
+			}
+			
+			.tip1{
+				width: 300px;
+				height: 25px;
+				line-height: 25px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="content">
+			<center>
+				<img src="/Images/Logo-no-bg.jpg" width="300px" height="100px" />
+			</center>
+			<div class="main">
+				<h1 class="topic1">Change Password</h1>
+				<p><strong class="p1">Enter Old Password :</strong></p>
+				<input class="ip1" type="password"></input>
+				<p><strong class="p2">Enter new password :</strong></p>
+				<input class="ip2" type="password"></input>
+				<p><strong class="p3">Re-enter new password :</strong></p>
+				<input class="ip3" type="password"></input>
+				<p><strong class="p4"></strong></p>
+				<div class="div1"></div>
+				<p class="magicbox">(<strong class="inRed">*Optional</strong>) Password hint helps you to remember password in case if you forget your password.</p>
+				<p><button class="bt1">Save Changes</button></p>
+				<hr />
+				<h1>Incognito Window</h1>
+				<p>
+					<input type="checkbox" class="cb1" checked><strong> Allow people to use incognito window.</strong></input><br />
+					When deselected, Chrome Lock will force minimize incognito window whenever a incognito is opened. <br />
+					<strong>Note : </strong>Works only when this extension is enabled in incognito mode. <strong><a href="" class="en">Enable now.</a></strong><br />
+				</p>
+				<br />
+				<hr />
+				<br />
+				<h1>Inactivity Timeout</h1>
+				<p><input class="tcb" type="checkbox" checked><strong> Automatically lock chrome after specified minutes of Inactivity.</strong></input><br />
+				when selected, Chrome Lock will automatically lock your browser after specified number of minutes of Inactivity.</p>
+				<div class="tm">
+					<div class="cl1">
+						<p>
+						<strong>Enter number minutes to wait before locking browser : </strong> <br /><br />
+						<input  class="timeOut" type="number" min="1" max="30" width="5px"></input> <br />
+						</p>
+					</div>	
+					<h2> Exceptions : </h2>
+					<p>
+						<input type="checkbox" class="tcb1"><strong> Don't automatically lock if audio is playing from : </strong></input><br />
+						<div class="innerOptions">
+							<p><input type="radio" name="Option" class="trd1" checked> From all sites.</input>
+							<br />
+							<input type="radio" name="Option" class="trd2"> From sites with following Domains : </input>
+							<br />
+							<div class="siteList">
+								<p><input type="text" class="tip1" placeholder="  Eg : youtube.com or www.youtube.com">
+								<button class="add"><img src="/Images/plus.png" />&nbsp;Add&nbsp;</button>
+								<button class="remove" disabled="true"><img src="/Images/minus.png" height="14px" />&nbsp;Remove&nbsp;</button><br />
+								<select name="list" class="list" size="10">
+								</select>
+							</p></div>
+							<p>
+							<input type="checkbox" class="tcb2" checked><strong>Consider Only the current ( or selected or Active) tab. </strong></input>
+							</p>
+						</p></div>
+						<p>If you are watching a video or listening to an audio, and you don't want to lock chrome automatically due to inactivity, Then use this option. <br />
+						You can select 1st option which disable automatic lock when a audio is playing irrespective of the site.
+						If you want to disable auto lock only when audio is playing in selected sites, choose 2d option. This option checks the URL of tab which is playing audio.
+						If the domain of the tab matches with the domain listed above, Auto lock will be disabled, And a Notification is shown.<br /> 
+						when 'Current Tab only' option is selected, Automatic lock wil be disabled only if the Current or Active tab is playing audio and matches the Condition.
+						<br />
+						<br />
+						<strong>Note : </strong>This feature is still in beta-stage, May not work perfectly.<br />
+						There is no optimal way to detect if video is playing in a tab. So, Using Audio this feature is implemented.<br />
+						If audio is muted by any means, It is considered as a tab without Audio and this option will not work.
+						</p>
+					</p>
+				</div>
+				<br />
+				<hr />
+				<br />
+				<h1>Advanced Protection</h1>
+				<p class="adp">
+				<input type="checkbox" class="cb2" checked><strong> Enable Advanced Protection.</strong></input><br />
+					when selected, chrome will be closed if anything except password page is opened. It prevents from taskill using some task manager. <br />
+					But, when selected you can't use any other applications.<br />
+					<strong>Note : </strong>This feature is still in beta-stage. May not work perfectly.
+				</p>
+			</div>
+			<div class="footer">
+				<center>
+					<div id="buttonLayout1">
+						<div class="ftbt1" id="button">Save Change</div>
+					</div>
+					<div id="buttonLayout2">
+						<div class="ftbt2" id="button">Cancel</div>
+					</div>
+				</center>
+			</div>
+		</div>
+	</body>
+</html>

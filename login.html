@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="bd">
+	<head>
+		<script src="login.js"></script>
+		<title> Log-In </title>
+		<style>
+			body{  
+				background: url(Images/background.jpg) no-repeat center center fixed; 
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+				width: 100%;
+				height: 100%;
+				overflow-y: hidden;
+			}
+			
+			.content{
+				background-color: white;
+				border-radius: 25px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 1200px;
+				height: 560px;
+				margin: 50px;
+			}
+			p{
+				font-size: 18px;
+				margin-left: 25px;
+			}
+			
+			#button{
+				font-weight: 900;
+				margin: 20px;
+				font-size: 18px;
+				color: #FFFFFF;
+				border-radius: 5px;
+				height: 30px;
+				line-height: 30px;
+				background-color: #5590FF;
+				border-color: #4672B9;
+			}
+			
+			#button:hover{
+				cursor: default;
+				background-color: #3C7BED;
+				border-color: #365DAA;
+			}
+			
+			#buttonLayout1{
+				width: 50%;
+				float: left;
+			}
+			
+			#buttonLayout2{
+				width: 50%;
+				float: right;
+			}
+			
+			input{
+				border-style: solid;
+				height: 20px;
+				line-height: 25px;
+				width: 300px;
+				margin-left: 40px;
+				box-shadow: 0 0 7px #4db8ff;
+				border-color: #4db8ff;
+			}
+			
+			input:focus {
+				outline-width: 0;
+			}
+			
+			.bt1{
+				width: 90px;
+				float: right;
+			}
+			
+			.bt2{
+				width: 130px;
+				float: left;
+			}
+			
+			.bt3{
+				width: 160px;
+			}
+			.inRed{
+				color: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="content">
+			<center>
+				<img src="/Images/logo-no-bg.jpg" alt="Chrome Lock Logo" width="300px" height="100px"/>
+			</center>		
+			<p>Chrome Lock has locked your chrome browser. Please enter password to unlock browser. Please don't try anything Smart.</p>
+			<div class="optional">
+				<p>You can use incognito window. <a href="" class="incog">Click here</a> to open a new incognito window.</p>
+			</div>
+			&nbsp;
+			&nbsp;
+			<center>
+				<p><strong>Enter your Password : </strong></p>
+				<input type="password" class="ip"></input><br />
+				<div id="buttonLayout1">
+					<div id="button" class="bt1">Unlock</div>
+				</div>
+				<div id="buttonLayout2">
+					<div id="button" class="bt2">Forgot Password</div><br />
+				</div>
+				<p class="or"><strong> OR </strong></p>
+			</center>
+			<div class="unADP">
+				<p>You can enter password later by clicking below button to minimize all chrome windows. So that you can use other applications</p>
+				<center>
+					<div id="button" class="bt3">Unlock Later</div>
+				</center>
+			</div>
+		</div>
+	</body>
+</html>
+
