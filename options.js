@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function(){
 	ip2 = document.querySelector('.ip2');
 	ip3 = document.querySelector('.ip3');
 	bt1 = document.querySelector('.bt1');
-	cb1 = document.querySelector('.cb1');
-	cb2 = document.querySelector('.cb2');
+	//cb1 = document.querySelector('.cb1');
+	//cb2 = document.querySelector('.cb2');
 	bt2 = document.querySelector('.ftbt1');
 	bt3 = document.querySelector('.ftbt2');
 	ena = document.querySelector('.en');
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	chrome.storage.local.get({'randomDigs' : []}, function (data){
 		randomDigs = data.randomDigs.slice();
 	});
-	
+	/*
 	chrome.storage.local.get('uiower', function(d){
 		if(!(d.uiower)){
 			document.querySelector('.cb1').checked = false;
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			cb2.checked = false;
 		}
 	});
-	
+	*/
 	chrome.storage.local.get({'encrPasswd': []}, function(data){
 		encrPasswd = data.encrPasswd.slice();
 		if(encrPasswd.length == 0){
@@ -355,7 +355,7 @@ function enaclk(){
 function bt1cl(){
 	var data1,data2,passwdLength,data3,data4,u=0,j,passwd,i,chr,numRandomDigs,charPasswd = [],startRandomDigs;
 	var flag = false;
-	var flag1 = false;
+	//var flag1 = false;
 	data1 = ip1.value;
 	data2 = ip2.value;
 	data3 = ip3.value;
@@ -517,8 +517,8 @@ function bt2cl(){
 		data1 = document.querySelector('.ip1').value;
 		data2 = document.querySelector('.ip2').value;
 		data3 = document.querySelector('.ip3').value;
-		flag1 = document.querySelector('.cb1').checked;
-		flag2 = document.querySelector('.cb2').checked;
+		//flag1 = document.querySelector('.cb1').checked;
+		//flag2 = document.querySelector('.cb2').checked;
 		data5 = document.querySelector('.timeOut').value;
 		var tdat1 = tcb.checked;
 		var tdat2 = tcb1.checked;
@@ -540,11 +540,9 @@ function bt2cl(){
 			alert("Inactivity timeout should be a Integer (Decimal points not allowed.!) greater than 2mins and less than 30mins.!");
 			document.querySelector('.timeOut').value = 5;
 		}else{
-			if(flag1 && flag2){
-				alert("Can't allow the use of incognito window when Advanced Protection is enabled.");
-			}else{
+	
 				changesSaved = true;
-				chrome.storage.local.set({'uiower': flag1});
+				//chrome.storage.local.set({'uiower': flag1});
 				chrome.storage.local.set({'pporte': data5});
 				chrome.storage.local.set({'tyudfg': flag2});
 				chrome.storage.local.set({'bnmjkl': tdat1});
@@ -554,7 +552,7 @@ function bt2cl(){
 				chrome.storage.local.set({'sitels': sitels});
 				alert("Changes saved successfully.!");
 				window.close();
-			}
+			
 		}
 	}else{
 		//do nothing
