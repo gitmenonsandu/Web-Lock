@@ -544,7 +544,7 @@ function bt2cl(){
 				changesSaved = true;
 				//chrome.storage.local.set({'uiower': flag1});
 				chrome.storage.local.set({'pporte': data5});
-				chrome.storage.local.set({'tyudfg': flag2});
+				//chrome.storage.local.set({'tyudfg': flag2});
 				chrome.storage.local.set({'bnmjkl': tdat1});
 				chrome.storage.local.set({'bnmghj': tdat2});
 				chrome.storage.local.set({'bnmfgh': tdat3});

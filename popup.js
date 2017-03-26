@@ -16,9 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	Ele4 = document.querySelector('.op4');
 	Ele4.addEventListener("click", op4mscl);
 	
-	Ele5 = document.querySelector('.op5');
-	Ele5.addEventListener("click", op5mscl);
-	
 	
 });
 
@@ -37,6 +34,7 @@ function op1mscl(){
 }
 
 function op2mscl(){
+	
 	chrome.tabs.create({
 		url: "options.html",
 		active: true,
@@ -55,15 +53,6 @@ function op3mscl(){
 }
 
 function op4mscl(){
-	chrome.tabs.create({
-		url: "about.html",
-		active: true,
-		pinned: false
-	});
-	window.close();
-}
-
-function op5mscl(){
 	var newURL = "chrome://extensions/?id=" + chrome.runtime.id;
 	chrome.tabs.create({ url : newURL});
 	window.close();
