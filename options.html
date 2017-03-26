@@ -1,146 +1,19 @@
 <!doctype html>
 <html>
 	<head>
-		<title> Options | Chrome Lock v1.0</title>
+		<center>
+		<img src="/Images/lock.png" width="100px" height="100px" /></center>
+		<title> Options | WebLOCK v1.0</title>
 		<script src="options.js"></script>
-		<style>
-			body{  
-				background: url(Images/background.jpg) no-repeat center center fixed; 
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;
-				width: 100%;
-				height: 100%;
-			}
-			
-			.content{
-				background-color: white;
-				border-radius: 25px;
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 1200px;
-				height: 560px;
-				margin: 50px;
-			}
-			
-			p{
-				font-size: 14px;
-				margin-left: 20px;
-			}
-			
-			.main{
-				border-radius: 25px;
-				border-width: 5px;
-				border-style: groove;
-				border-color: lightgrey;
-				overflow-y: scroll;
-				height: 450px;
-			}
-			
-			bt1{
-				margin-left: 35px;
-			}
-			
-			hr{
-				height: 3px;
-				color: lightgrey;
-				background-color: lightgrey;
-			}
-			
-			input{
-				font-size: 14px;
-				margin-left: 20px;
-				margin-bottom: 15px;
-			}
-			h1{
-				margin-left: 20px;
-			}
-			
-			h2{
-				margin-left: 20px;
-			}
-			
-			.inRed{
-				color: red;
-			}
-			.footer{
-				background-color: #FFFFFF;
-				border-radius: 25px;
-				height: 50px;
-				width: 100%;
-				border-color: black;
-				border-style: solid;
-				border-width: 3px;
-			}
-			#button{
-				font-weight: 900;
-				margin-top: 10px;
-				font-size: 18px;
-				color: #FFFFFF;
-				border-radius: 5px;
-				height: 30px;
-				line-height: 30px;
-				background-color: #5590FF;
-				border-color: #4672B9;
-			}
-			
-			#button:hover{
-				cursor: default;
-				background-color: #3C7BED;
-				border-color: #365DAA;
-			}
-			
-			#buttonLayout1{
-				width: 50%;
-				float: left;
-			}
-			
-			#buttonLayout2{
-				width: 50%;
-				float: right;
-			}
 
-			.ftbt1{
-				margin-right: 25px;
-				width: 150px;
-				float: right;
-			}
-			.ftbt2{
-				margin-left: 25px;
-				width: 130px;
-				float: left;
-			}
-			
-			select{
-				margin-left: 25px;
-				width: 400px;
-				font-size: 14px;
-			}
-			
-			.add{
-				margin-left: 20px;
-				height: 25px;
-			}
-			
-			.remove{
-				margin-left: 20px;
-				height: 25px;
-			}
-			
-			.tip1{
-				width: 300px;
-				height: 25px;
-				line-height: 25px;
-			}
-		</style>
+		<link rel="stylesheet" href="main.css">
 	</head>
 	
 	<body>
+	<div id="page">
 		<div class="content">
 			<center>
-				<img src="/Images/Logo-no-bg.jpg" width="300px" height="100px" />
+				<h1 style="color: red">WebLOCK</h1>
 			</center>
 			<div class="main">
 				<h1 class="topic1">Change Password</h1>
@@ -153,13 +26,13 @@
 				<p><strong class="p4"></strong></p>
 				<div class="div1"></div>
 				<p class="magicbox">(<strong class="inRed">*Optional</strong>) Password hint helps you to remember password in case if you forget your password.</p>
-				<p><button class="bt1">Save Changes</button></p>
+				<center><p><button class="bt1" id="buttonLayout">Save Changes</button></p></center>
 				<hr />
 				<h1>Incognito Window</h1>
 				<p>
 					<input type="checkbox" class="cb1" checked><strong> Allow people to use incognito window.</strong></input><br />
 					When deselected, Chrome Lock will force minimize incognito window whenever a incognito is opened. <br />
-					<strong>Note : </strong>Works only when this extension is enabled in incognito mode. <strong><a href="" class="en">Enable now.</a></strong><br />
+					<strong>Note : </strong>Works only when this extension is enabled in incognito mode. <strong><a href="" class="en" style="color: yellow">Enable now.</a></strong><br />
 				</p>
 				<br />
 				<hr />
@@ -184,8 +57,8 @@
 							<br />
 							<div class="siteList">
 								<p><input type="text" class="tip1" placeholder="  Eg : youtube.com or www.youtube.com">
-								<button class="add"><img src="/Images/plus.png" />&nbsp;Add&nbsp;</button>
-								<button class="remove" disabled="true"><img src="/Images/minus.png" height="14px" />&nbsp;Remove&nbsp;</button><br />
+								<button class="add" id="buttonLayout1"><img src="/Images/plus.png" />&nbsp;Add&nbsp;</button>
+								<button class="remove" disabled="true" id="buttonLayout2"><img src="/Images/minus.png" height="14px" />&nbsp;Remove&nbsp;</button><br />
 								<select name="list" class="list" size="10">
 								</select>
 							</p></div>
@@ -217,16 +90,21 @@
 					<strong>Note : </strong>This feature is still in beta-stage. May not work perfectly.
 				</p>
 			</div>
+			
 			<div class="footer">
 				<center>
-					<div id="buttonLayout1">
-						<div class="ftbt1" id="button">Save Change</div>
+					<div id="buttonLayout1" >
+						<!--<div class="ftbt1" id="button">Save Change</div>-->
+						<button class="ftbt1">&nbsp;Save Changes&nbsp;</button>	
 					</div>
 					<div id="buttonLayout2">
-						<div class="ftbt2" id="button">Cancel</div>
+					<button class="ftbt2">&nbsp;Cancel&nbsp;</button>
+						<!--<div class="ftbt2" id="button">Cancel</div>-->
 					</div>
 				</center>
 			</div>
 		</div>
+			</div>
+		
 	</body>
 </html>
