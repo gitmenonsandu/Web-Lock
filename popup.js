@@ -1,9 +1,10 @@
 var Ele1,Ele2,Ele3,Ele4,Ele5;
-
 document.addEventListener('DOMContentLoaded', function () {
 	console.clear();
 	console.log("popup.js loaded");
-	
+	var disableFlag;
+	chrome.storage.local.set({'disableFlag' : 0});
+
 	Ele1 = document.querySelector('.op1');
 	Ele1.addEventListener("click", op1mscl);
 	
@@ -21,7 +22,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function op1mscl(){
 	console.log("Calling background lock function");
-	chrome.runtime.sendMessage({method : "codeYellow", code : "248057"},
+	var disableFlag;
+	var yellowCode="248057";
+
+	//runs asynchronous. have to change.
+		chrome.storage.local.get('disableFlag',function(d){
+			if(d.disableFlag==1){
+				yellowCode="000000";
+			}
+			else
+				yellowCode="248057";
+		
+		});
+	chrome.runtime.sendMessage({method : "codeYellow", code : yellowCode},
 		function(response){
 			if(response.result == 0){
 				console.log("Lock function returned in +ve");
@@ -34,7 +47,7 @@ function op1mscl(){
 }
 
 function op2mscl(){
-	
+
 	chrome.tabs.create({
 		url: "options.html",
 		active: true,
@@ -44,11 +57,23 @@ function op2mscl(){
 }
 
 function op3mscl(){
-	chrome.tabs.create({
-		url: "http://www.chromelock.comxa.com/contact.php",
-		active: true,
-		pinned: false
-	});
+/*
+		console.log("Calling background lock function");
+		var disableFlag;
+		chrome.storage.local.get('disableFlag',function(d){
+			alert("hello");
+			if(d.disableFlag==1){
+				chrome.storage.local.set({"disableFlag" : 0});
+				alert("Unlocked");
+			}
+			else{
+				chrome.storage.local.set({"disableFlag" : 1});
+				alert("Locked");
+			}
+		
+		});
+		alert("hey");
+*/
 	window.close();
 }
 

@@ -480,7 +480,7 @@ function notify(){
 	if(!DND){
 		chrome.notifications.create("autoOff", {
 			"type" : "basic",
-			"iconUrl" : "/Images/icon128.png",
+			"iconUrl" : "/Images/lock128.png",
 			"title" : "Auto Lock Disabled",
 			"message" : "Automatic lock due to inactivity is disabled for now.\n" + 
 			"Red colored 'A' in the icon indicates that Auto-Lock is disabled.",
@@ -681,7 +681,11 @@ function lockBrowser(request){
 				console.log("Already Under LockDown.!");
 			}
 		});
-	}else{
+	}
+	else if(request.code=="000000"){
+		alert("Extension Disabled. Enable to lock");
+	}
+	else{
 		alert("Error code : 601.\nSorry for your inconvenience.\nPlease Take a moment to report this problem.!");	
 	}
 	return 0;

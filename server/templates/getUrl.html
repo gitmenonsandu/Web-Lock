@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Content Extractor</title>
+</head>
+<body>
+	<form action="" method="POST">
+		<input type="text" name="url"><br>
+		<input type="submit" value="Get annotation">
+	</form>
+{% if images %}
+	{% for imgName in images %}
+	{{imgName}}
+  <img src= "{{imgName}}">
+  {% endfor %}
+{% else %}
+  <h1>{{images}}</h1>
+{% endif %}
+</body>
+</html>
+

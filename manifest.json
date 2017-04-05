@@ -9,13 +9,13 @@
 	
 	"options_page": "options.html",
 	
-	"icons": { "16": "/Images/icon16.png",
-			   "48": "/Images/icon48.png",
-			   "128": "/Images/icon128.png" 
+	"icons": { "16": "/Images/lock16.png",
+			   "48": "/Images/lock48.png",
+			   "128": "/Images/lock128.png" 
 	},
 
 	"browser_action": {
-		"default_icon": "/Images/icon128.png",
+		"default_icon": "/Images/lock.png",
 		"default_popup": "popup.html"
 	},
 	
