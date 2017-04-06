@@ -7,7 +7,7 @@ var DND = false,disabled = false;
 
 document.addEventListener('DOMContentLoaded', function(){
 	console.clear();
-	console.log("Chrome Locker is in Action");
+	console.log("WebLOCKer is in Action");
 	
 	chrome.browserAction.setBadgeBackgroundColor({"color": "#FF0000"});
 	chrome.storage.local.get('bnmjkl', function(dd){
@@ -476,7 +476,7 @@ function contextClick(info, tab){
 
 function notify(){
 	chrome.browserAction.setBadgeText({"text": "A"});
-	chrome.browserAction.setTitle({"title": "Chrome Lock.\nAuto Lock disabled."});
+	chrome.browserAction.setTitle({"title": "WebLOCK.\nAuto Lock disabled."});
 	if(!DND){
 		chrome.notifications.create("autoOff", {
 			"type" : "basic",
@@ -484,7 +484,7 @@ function notify(){
 			"title" : "Auto Lock Disabled",
 			"message" : "Automatic lock due to inactivity is disabled for now.\n" + 
 			"Red colored 'A' in the icon indicates that Auto-Lock is disabled.",
-			"contextMessage" : "Chrome Lock",
+			"contextMessage" : "WebLOCK",
 			"buttons" : [{"title": "OK"}, {"title" : "Don't show this message again."}],
 			"isClickable" : false
 		});
@@ -492,7 +492,7 @@ function notify(){
 }
 
 function unNotify(){
-	chrome.browserAction.setTitle({"title": "Chrome Lock"});
+	chrome.browserAction.setTitle({"title": "WebLOCK"});
 	chrome.browserAction.setBadgeText({"text": ""});
 	chrome.notifications.clear("autoOff");
 }

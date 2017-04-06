@@ -1,4 +1,4 @@
-var tmString1 = "Chrome Lock will automatically lock your browser after "
+var tmString1 = "WebLOCK will automatically lock your browser after "
 var timeOut;
 var tmSting2 = "mins of Inactivity. Minimum = 2mins. Maximum = 30mins. <br /> <strong>Note: </strong>This option is still in beta-stage. May not work perfectly.</strong>"
 var encrPasswd = [];

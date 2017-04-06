@@ -57,27 +57,6 @@ function op2mscl(){
 }
 
 function op3mscl(){
-/*
-		console.log("Calling background lock function");
-		var disableFlag;
-		chrome.storage.local.get('disableFlag',function(d){
-			alert("hello");
-			if(d.disableFlag==1){
-				chrome.storage.local.set({"disableFlag" : 0});
-				alert("Unlocked");
-			}
-			else{
-				chrome.storage.local.set({"disableFlag" : 1});
-				alert("Locked");
-			}
-		
-		});
-		alert("hey");
-*/
-	window.close();
-}
-
-function op4mscl(){
 	var newURL = "chrome://extensions/?id=" + chrome.runtime.id;
 	chrome.tabs.create({ url : newURL});
 	window.close();
