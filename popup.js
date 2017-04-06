@@ -13,10 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	
 	Ele3 = document.querySelector('.op3');
 	Ele3.addEventListener("click", op3mscl);
-	
-	Ele4 = document.querySelector('.op4');
-	Ele4.addEventListener("click", op4mscl);
-	
+
 	
 });
 
@@ -61,3 +58,7 @@ function op3mscl(){
 	chrome.tabs.create({ url : newURL});
 	window.close();
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
