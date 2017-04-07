@@ -58,7 +58,4 @@ function op3mscl(){
 	chrome.tabs.create({ url : newURL});
 	window.close();
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
