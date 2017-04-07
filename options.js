@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	});
 	
 	if(timeOut == undefined){
-		timeOut = 5;
+		timeOut = 2;
 		chrome.storage.local.set({'pporte' : timeOut});
 	}
 	document.querySelector('.timeOut').value = timeOut;
@@ -141,13 +141,13 @@ document.addEventListener('DOMContentLoaded', function(){
 					
 					chrome.storage.local.get({'sitels' : []}, function(d5){
 						if(d5.sitels == undefined){
-							sitels = ["youtube.com", "netflix.com", "vimeo.com"];
+							sitels = ["youtube.com"];
 							chrome.storage.local.set({'sitels' : sitels});
 							onLoad();
 							return;
 						}else{
 							if(d5.sitels.length == 0){
-								sitels = ["youtube.com", "netflix.com", "vimeo.com"];
+								sitels = ["youtube.com"];
 								chrome.storage.local.set({'sitels' : sitels});
 								onLoad();
 								return;
@@ -538,7 +538,7 @@ function bt2cl(){
 	
 		if((data5 < 2) || (data5 > 30) || (Math.round(data5) != data5)){
 			alert("Inactivity timeout should be a Integer (Decimal points not allowed.!) greater than 2mins and less than 30mins.!");
-			document.querySelector('.timeOut').value = 5;
+			document.querySelector('.timeOut').value = 2;
 		}else{
 	
 				changesSaved = true;
